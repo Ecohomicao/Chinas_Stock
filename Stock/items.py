@@ -12,4 +12,3 @@ class NameItem(scrapy.Item):
     # name = scrapy.Field()
     code = scrapy.Field()
     name = scrapy.Field()
-    

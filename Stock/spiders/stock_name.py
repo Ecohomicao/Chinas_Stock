@@ -19,9 +19,8 @@ class StockNameSpider(BaseSpider):
             code = link.xpath('td[1]/a/text()').extract()
             name = link.xpath('td[2]/a/text()').extract()
             nameitem = NameItem()
-            if code <> [u'上一页' ,u'下一页'] and code <> [u'上一页'] and code <> [u'下一页'] and name <> [u'上一页' ,u'下一页'] and name <> [u'上一页'] and name <> [u'下一页']:
-                nameitem['code'] = code
-                nameitem['name'] = name
+            nameitem['code'] = code
+            nameitem['name'] = name
             yield nameitem
         for url in sel.xpath('//*[@class= "tab01"]/table/tr[52]/td/a/@href').extract():
             url = "http://app.finance.ifeng.com/list/stock.php" + url
